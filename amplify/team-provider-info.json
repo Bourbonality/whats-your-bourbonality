@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify20592eb1eb4b4-staging-210734-authRole",
+      "UnauthRoleArn": "arn:aws:iam::147912086958:role/amplify-amplify20592eb1eb4b4-staging-210734-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::147912086958:role/amplify-amplify20592eb1eb4b4-staging-210734-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplify20592eb1eb4b4-staging-210734-deployment",
+      "UnauthRoleName": "amplify-amplify20592eb1eb4b4-staging-210734-unauthRole",
+      "StackName": "amplify-amplify20592eb1eb4b4-staging-210734",
+      "StackId": "arn:aws:cloudformation:us-east-2:147912086958:stack/amplify-amplify20592eb1eb4b4-staging-210734/d465cf20-74b4-11ec-b88c-0a6a0d7cf562",
+      "AmplifyAppId": "d22f29cfnmwhlj"
+    },
+    "categories": {
+      "auth": {
+        "whatsyourbourbonality": {}
+      }
+    }
+  }
+}

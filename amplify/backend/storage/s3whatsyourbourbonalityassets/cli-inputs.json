@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3whatsyourbourbonalityassets",
+  "bucketName": "whats-your-bourbonality-assets",
+  "policyUUID": "60c7008e",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
