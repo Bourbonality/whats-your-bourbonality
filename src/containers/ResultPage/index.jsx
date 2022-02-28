@@ -69,6 +69,7 @@ const ResultPage = (props) => {
           lineHeight={['20px', '30px', '40x']}
           m="10px"
           textAlign="center"
+          px={20}
         >
           {description.text}
         </Text>
