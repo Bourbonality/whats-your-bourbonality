@@ -6,6 +6,7 @@ import DiceBox from './DiceBox';
 import MerchBox from './MerchBox';
 import Sidebar from './Sidebar';
 import BusinessInfo from './BusinessInfo';
+import ShareResults from './ShareResults';
 import {
   Section,
   StyledFlex,
@@ -81,6 +82,11 @@ const ResultPage = (props) => {
       {/*    color={color}*/}
       {/*  />*/}
       {/*</Section>*/}
+
+      {/* Dice */}
+      <Section>
+        <ShareResults bourbonality={bourbonality} color={color} />
+      </Section>
 
       {/* Dice */}
       <Section>
