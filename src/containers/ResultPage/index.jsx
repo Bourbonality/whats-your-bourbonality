@@ -84,9 +84,9 @@ const ResultPage = (props) => {
       {/*  />*/}
       {/*</Section>*/}
 
-      {/* Dice */}
+      {/* Share Results */}
       <Section>
-        <ShareResults bourbonality={bourbonality} color={color} />
+        <ShareResults bourbonality={bourbonality} color={color} image={image} />
       </Section>
 
       {/* Dice */}
