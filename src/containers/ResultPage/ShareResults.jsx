@@ -7,7 +7,7 @@ import {
   faInstagramSquare,
 } from '@fortawesome/free-brands-svg-icons';
 import { TitleText } from './styledComponents/ResultPage';
-import { faSms, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FacebookShareButton, TwitterShareButton } from 'react-share';
 import Section from './Section';
 import { detectMob } from '../../utils/isMobile';
@@ -33,19 +33,22 @@ const ShareResults = ({ bourbonality, color, image }) => {
         Share my results
       </TitleText>
       <Flex justifyContent="center">
-        {detectMob() ? (
+        {detectMob() && navigator.share ? (
           <button onClick={handleSharing}> Test Share Button</button>
         ) : (
           <>
-            {' '}
-            <TwitterShareButton>
+            <TwitterShareButton
+              url={`https://master.dc2srfrcb0abs.amplifyapp.com/`}
+              title={`I am ${bourbonality}, take the quiz and find our what your Boubonality is!`}
+              hashtags={['WhatsYourBoubonality?']}
+            >
               <Text fontSize={[6, 7, 8]} mx={10} color={color}>
                 <FontAwesomeIcon icon={faTwitterSquare} />
               </Text>
             </TwitterShareButton>
             <FacebookShareButton
               url={`https://master.dc2srfrcb0abs.amplifyapp.com/`}
-              quote={`My Bourbonality is ${bourbonality.toUpperCase()}, take this quiz and find out what your Boubonality is! `}
+              quote={`My Bourbonality is ${bourbonality.toUpperCase()}, take the quiz and find out what your Boubonality is!`}
               hashtag="#WhatsYourBourbonality"
               imageUrl={image}
             >
@@ -55,9 +58,6 @@ const ShareResults = ({ bourbonality, color, image }) => {
             </FacebookShareButton>
             <Text fontSize={[6, 7, 8]} mx={10} color={color}>
               <FontAwesomeIcon icon={faInstagramSquare} />
-            </Text>
-            <Text fontSize={[6, 7, 8]} mx={10} color={color}>
-              <FontAwesomeIcon icon={faSms} />
             </Text>
             <Text fontSize={[6, 7, 8]} mx={10} color={color}>
               <FontAwesomeIcon icon={faLink} />
