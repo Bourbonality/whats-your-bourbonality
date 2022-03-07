@@ -18,6 +18,10 @@ const Quiz = () => {
     setBourbonality(results[0]);
   };
 
+  console.log(showResult);
+  console.log(bourbonality);
+  console.log(count);
+
   return (
     <>
       {editMode && (

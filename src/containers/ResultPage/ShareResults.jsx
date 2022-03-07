@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Flex, Image, Text } from 'pcln-design-system';
+import React from 'react';
+import { Flex, Text } from 'pcln-design-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTwitterSquare,

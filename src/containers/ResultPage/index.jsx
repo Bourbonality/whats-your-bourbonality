@@ -48,7 +48,7 @@ const ResultPage = (props) => {
         `https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/results/${bourbonality}.png`
       );
     }
-  }, []);
+  }, [bourbonality]);
 
   return (
     <StyledFlex

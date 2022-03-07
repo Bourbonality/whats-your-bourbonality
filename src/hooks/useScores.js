@@ -1,5 +1,5 @@
-import { useRecoilState } from 'recoil'
-import { scoresAtom } from '../atoms/scoresAtom'
+import { useRecoilState } from 'recoil';
+import { scoresAtom } from '../atoms/scoresAtom';
 
 export const useScores = () => {
   const [scores, setScores] = useRecoilState(scoresAtom);
@@ -8,10 +8,10 @@ export const useScores = () => {
     setScores((prevScores) => {
       return {
         ...prevScores,
-        [trait]: prevScores[trait] + 1
-      }
-    })
-  }
+        [trait]: prevScores[trait] + 1,
+      };
+    });
+  };
 
   return { scores, updateScores };
-}
+};

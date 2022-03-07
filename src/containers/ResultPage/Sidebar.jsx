@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, Image, Box, Text } from 'pcln-design-system';
+import { Flex, Image, Text } from 'pcln-design-system';
 import { socialMediaIcons } from '../../mocks';
 import { StyledFlex } from './styledComponents/Sidebar';
 
