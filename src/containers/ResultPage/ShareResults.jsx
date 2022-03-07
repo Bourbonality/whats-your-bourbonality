@@ -17,9 +17,9 @@ const ShareResults = ({ bourbonality, color, image }) => {
     try {
       await navigator
         .share({
-          title: 'See cool stuff',
-          text: 'Really awesome thing you need to see right meow',
-          url: 'http://ionicframework.com/',
+          title: `What's your Bourbonality?`,
+          text: `My Boubonality is ${bourbonality}, take the quiz and find out what your Bourbonality is`,
+          url: 'https://master.dc2srfrcb0abs.amplifyapp.com/',
         })
         .then(console.log('Share success'));
     } catch (e) {
