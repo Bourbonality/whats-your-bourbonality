@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Flex, Image, Text } from 'pcln-design-system'
 import styled from 'styled-components'
-import isInViewport from '../../utils/isInViewport'
+import { isInViewport } from '../../utils'
+import { S3_URL } from '../../services/constants'
 
 const GlowBox = styled(Flex)`
   flex-wrap: wrap;
@@ -29,11 +30,9 @@ const RecipeBox = ({ bourbonality, drink, color }) => {
   const [glow, setGlow] = useState(true)
 
   useEffect(async () => {
-    // setRecipeImage(await Storage.get(`drink/${bourbonality}.png`))
-    setRecipeImage(`https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/drink/${bourbonality}.png`)
+    setRecipeImage(`${S3_URL}/drink/${bourbonality}.png`)
 
-    // const fetchedTitle = await Storage.get(`titles/cocktail/${bourbonality}.png`)
-    const fetchedTitle = `https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/titles/cocktail/${bourbonality}.png`
+    const fetchedTitle = `${S3_URL}/titles/cocktail/${bourbonality}.png`
     setTitle(fetchedTitle)
   }, [bourbonality])
 

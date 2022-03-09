@@ -4,6 +4,7 @@ import { results } from '../mocks'
 import { useScores } from '../hooks/useScores'
 import { useTraits } from '../hooks/useTraits'
 import { S3_URL } from '../services/constants'
+import { isMobile } from '../utils'
 import { StyledSlide, StyledBox, AnswerBox } from './styledComponents/Slide'
 
 const Slide = ({
@@ -13,7 +14,6 @@ const Slide = ({
   setCount,
   setBourbonality,
 }) => {
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
   const { scores, updateScores } = useScores();
   const { traits, updateTraits } = useTraits()
   const [slideData, setSlideData] = useState([])
@@ -29,18 +29,10 @@ const Slide = ({
       }
     )
     setSlideData(newSlideData)
-    console.log('*** hi')
   }, [])
 
-  const handleClick = (trait) => {
-    updateTraits(scores)
-
-    if (count <= 14) {
-      setCount(count + 1)
-      updateScores(trait)
-    }
-
-    if (count === 14) {
+  useEffect(() => {
+    if (count === 15) {
       let tally = 0
       for (let i = 0; i < results.length; i++) {
         const resultTraits = results[i].traits
@@ -51,6 +43,15 @@ const Slide = ({
         if (tally === 3) setBourbonality(results[i])
         else tally = 0
       }
+    }
+  }, [count, traits])
+
+  const handleClick = (trait) => {
+    updateTraits(scores)
+    updateScores(trait)
+
+    if (count <= 14) {
+      setCount(count + 1)
     }
   }
 

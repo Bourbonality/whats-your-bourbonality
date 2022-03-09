@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { LoadingContainer, StyledVideo } from './styledComponents/LoadingPage'
+import { S3_URL } from '../services/constants'
 
 const LoadingPage = ({ showResult, showLoading, setShowResult }) => {
     useEffect(() => {
@@ -15,7 +16,7 @@ const LoadingPage = ({ showResult, showLoading, setShowResult }) => {
             showResult={showResult}
         >
             <StyledVideo muted autoPlay loop playsInline>
-                <source src='https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/loading-screen-blk.mp4' type='video/mp4' />
+                <source src={`${S3_URL}/loading-screen-blk.mp4`} type='video/mp4' />
             </StyledVideo>
         </LoadingContainer>
     )

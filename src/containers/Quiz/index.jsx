@@ -42,7 +42,6 @@ const Quiz = () => {
         </NextButton>
       }
       <LoadingPage
-        Page
         showLoading={!!bourbonality}
         showResult={showResult}
         setShowResult={setShowResult}

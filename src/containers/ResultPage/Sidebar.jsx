@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Flex, Image } from 'pcln-design-system'
 import { socialMediaIcons } from '../../mocks'
 import { StyledFlex } from './styledComponents/Sidebar'
+import { S3_URL } from '../../services/constants'
 
 const Sidebar = ({ color, social, bourbonality }) => {
   const [showSidebar, setShowSidebar] = useState(false)
@@ -11,7 +12,7 @@ const Sidebar = ({ color, social, bourbonality }) => {
   useEffect(() => {
     const iconsArray = []
     socialMediaIcons.forEach(async icon => {
-      iconsArray.push(`https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/social-media-icons/${social}${social === 'white' ? '/' : `/${bourbonality}/`}${icon.social}.png`)
+      iconsArray.push(`${S3_URL}/social-media-icons/${social}${social === 'white' ? '/' : `/${bourbonality}/`}${icon.social}.png`)
     })
     setIcons(iconsArray)
     setLinks(socialMediaIcons.map(icons => icons.link))

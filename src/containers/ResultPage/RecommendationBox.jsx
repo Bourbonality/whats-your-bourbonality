@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Flex, Image } from 'pcln-design-system'
 import Section from './Section'
+import { S3_URL } from '../../services/constants'
 
 const RecommendationBox = ({ bourbonality, recommendations, color }) => {
   const [title, setTitle] = useState({})
@@ -9,13 +10,11 @@ const RecommendationBox = ({ bourbonality, recommendations, color }) => {
   useEffect(async () => {
     const fetchedRecs = {}
     recommendations.forEach(async rec => {
-      // fetchedRecs[rec.imageUrl] = await Storage.get(`bourbons/${rec.imageUrl}.png`)
-      fetchedRecs[rec.imageUrl] = `https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/bourbons/${rec.imageUrl}.png`
+      fetchedRecs[rec.imageUrl] = `${S3_URL}/bourbons/${rec.imageUrl}.png`
     })
     setRecs(fetchedRecs)
 
-    // const fetchedTitle = await Storage.get(`titles/recs/${bourbonality}.png`)
-    const fetchedTitle = `https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/titles/recs/${bourbonality}.png`
+    const fetchedTitle = `${S3_URL}/titles/recs/${bourbonality}.png`
     setTitle(fetchedTitle)
   }, [bourbonality])
 

@@ -11,6 +11,7 @@ import {
   Description,
   TitleText
 } from './styledComponents/ResultPage'
+import { S3_URL } from '../../services/constants'
 
 const ResultPage = props => {
   const {
@@ -33,11 +34,11 @@ const ResultPage = props => {
 
   useEffect(() => {
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-          setImage(`https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/results/mobile/${bourbonality}.png`)
+          setImage(`${S3_URL}/results/mobile/${bourbonality}.png`)
       } else {
-          setImage(`https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/results/${bourbonality}.png`)
+          setImage(`${S3_URL}/results/${bourbonality}.png`)
       }
-  }, [])
+  }, [bourbonality])
 
   return (
     <StyledFlex flexDirection='column' backgroundColor={description.backgroundColor} pb={5} loaded={loaded}>
