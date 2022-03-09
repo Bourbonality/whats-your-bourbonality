@@ -7,8 +7,6 @@ import {
   NextButton
 } from './styledComponents/Quiz'
 
-const editMode = true;
-
 const Quiz = () => {
   const [slideNum, setSlideNum] = useState(0)
 
@@ -23,7 +21,7 @@ const Quiz = () => {
 
   return (
     <>
-      {editMode &&
+      {process.env.NODE_ENV === 'development' &&
         <ShowResultsButton
           onClick={showResults}
         >
