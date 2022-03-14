@@ -1,4 +1,4 @@
-const S3_URL = 'https://whats-your-bourbonality-assets210734-staging.s3.us-east-2.amazonaws.com/default'
+const S3_URL = 'https://whats-your-bourbonality-assets210734-staging.s3.us-east-2.amazonaws.com/public'
 
 const RecoilKeys = {
   TraitsAtom: 'TraitsAtom',

@@ -5,6 +5,7 @@ import {
   StyledVideo,
   ClickMe
 } from './styledComponents/Landing'
+import { S3_URL } from '../services/constants'
 
 const Landing = ({ started, setStarted }) => {
   const [showClickMe, setShowClickMe] = useState(false)
@@ -24,7 +25,7 @@ const Landing = ({ started, setStarted }) => {
       onClick={() => setStarted(true)}
     >
       <StyledVideo playsInline muted autoPlay>
-        <source src='https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/whats-your-bourbonality.mp4' type='video/mp4' />
+        <source src={`${S3_URL}/whats-your-bourbonality.mp4`} type='video/mp4' />
       </StyledVideo>
       <ClickMe showClickMe={showClickMe} loaded={loaded}>
         <Text color='white' fontSize={5}>Click to Begin</Text>

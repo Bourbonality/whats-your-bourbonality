@@ -4,7 +4,6 @@ import RecipeBox from './RecipeBox';
 import Footer from './Footer';
 import DiceBox from './DiceBox';
 import MerchBox from './MerchBox';
-import Sidebar from './Sidebar';
 import BusinessInfo from './BusinessInfo';
 import ShareResults from './ShareResults';
 import {
@@ -14,6 +13,7 @@ import {
   TitleText,
   FooterSection,
 } from './styledComponents/ResultPage';
+import { S3_URL } from '../../services/constants';
 
 const ResultPage = (props) => {
   const {
@@ -40,13 +40,9 @@ const ResultPage = (props) => {
         navigator.userAgent
       )
     ) {
-      setImage(
-        `https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/results/mobile/${bourbonality}.png`
-      );
+      setImage(`${S3_URL}/results/mobile/${bourbonality}.png`);
     } else {
-      setImage(
-        `https://bourbonality-content-bucket201829-staging.s3.us-east-2.amazonaws.com/public/results/${bourbonality}.png`
-      );
+      setImage(`${S3_URL}/results/${bourbonality}.png`);
     }
   }, [bourbonality]);
 
@@ -57,7 +53,8 @@ const ResultPage = (props) => {
       pb={5}
       loaded={loaded}
     >
-      <Sidebar color={color} social={social} bourbonality={bourbonality} />
+      {/* <Sidebar color={color} social={social} bourbonality={bourbonality} /> */}
+
       <Image src={image} />
       <Description flexDirection="column" justifyContent="center">
         <TitleText color={color} fontSize={[4, 5, 6]}>
@@ -86,7 +83,12 @@ const ResultPage = (props) => {
 
       {/* Share Results */}
       <Section>
-        <ShareResults bourbonality={bourbonality} color={color} image={image} />
+        <ShareResults
+          bourbonality={bourbonality}
+          color={color}
+          image={image}
+          backgroundColor={description.backgroundColor}
+        />
       </Section>
 
       {/* Dice */}

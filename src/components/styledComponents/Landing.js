@@ -1,4 +1,4 @@
-import { Flex, Text } from 'pcln-design-system'
+import { Flex } from 'pcln-design-system'
 import styled from 'styled-components'
 
 const LandingContainer = styled(Flex)`

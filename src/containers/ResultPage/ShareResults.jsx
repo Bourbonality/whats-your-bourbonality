@@ -4,22 +4,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTwitterSquare,
   faFacebookSquare,
-  faInstagramSquare,
 } from '@fortawesome/free-brands-svg-icons';
 import { TitleText } from './styledComponents/ResultPage';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FacebookShareButton, TwitterShareButton } from 'react-share';
 import Section from './Section';
 import { detectMob } from '../../utils/isMobile';
+import { HyperLink } from './styledComponents/shareResults';
 
-const ShareResults = ({ bourbonality, color, image }) => {
+const ShareResults = ({ bourbonality, color, image, backgroundColor }) => {
   const handleSharing = async () => {
     try {
       await navigator
         .share({
           title: `What's your Bourbonality?`,
           text: `My Boubonality is ${bourbonality}, take the quiz and find out what your Bourbonality is`,
-          url: 'https://master.dc2srfrcb0abs.amplifyapp.com/',
+          url: 'https://main.d22f29cfnmwhlj.amplifyapp.com/',
         })
         .then(console.log('Share success'));
     } catch (e) {
@@ -56,12 +56,25 @@ const ShareResults = ({ bourbonality, color, image }) => {
                 <FontAwesomeIcon icon={faFacebookSquare} />
               </Text>
             </FacebookShareButton>
-            <Text fontSize={[6, 7, 8]} mx={10} color={color}>
-              <FontAwesomeIcon icon={faInstagramSquare} />
-            </Text>
-            <Text fontSize={[6, 7, 8]} mx={10} color={color}>
-              <FontAwesomeIcon icon={faLink} />
-            </Text>
+            <HyperLink
+              mt={['4%']}
+              mb={['2.5%']}
+              mx={10}
+              fontSize={[5, 5, 6]}
+              bg={color}
+              color={backgroundColor}
+            >
+              <div
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    `I am ${bourbonality}, take the quiz and find our what your Bourbonality is! https://master.dc2srfrcb0abs.amplifyapp.com/`
+                  );
+                  alert('Copied to clipboard!');
+                }}
+              >
+                <FontAwesomeIcon icon={faLink} />
+              </div>
+            </HyperLink>
           </>
         )}
       </Flex>
