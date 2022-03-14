@@ -27,7 +27,7 @@ const Quiz = () => {
           {showResult ? 'Hide Results' : 'Show Results'}
         </ShowResultsButton>
       )}
-      )
+
       {showResult && (
         <NextButton
           bourbonality={bourbonality}
