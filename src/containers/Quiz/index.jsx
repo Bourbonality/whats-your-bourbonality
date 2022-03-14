@@ -19,16 +19,19 @@ const Quiz = () => {
   console.log(showResult);
   console.log(bourbonality);
   console.log(count);
+  console.log(process.env.NODE_ENV);
 
   return (
     <>
-      {process.env.NODE_ENV === 'development' && (
+      {process.env.NODE_ENV === 'development' ? (
         <ShowResultsButton onClick={showResults}>
           {showResult ? 'Hide Results' : 'Show Results'}
         </ShowResultsButton>
+      ) : (
+        <></>
       )}
 
-      {showResult && (
+      {process.env.NODE_ENV === 'development' && showResult ? (
         <NextButton
           bourbonality={bourbonality}
           onClick={() => {
@@ -38,7 +41,10 @@ const Quiz = () => {
         >
           Next slide
         </NextButton>
+      ) : (
+        <></>
       )}
+
       <LoadingPage
         Page
         showLoading={!!bourbonality}

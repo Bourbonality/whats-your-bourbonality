@@ -24,7 +24,6 @@ const ResultPage = (props) => {
     recommendations,
     color,
     secondary,
-    social,
   } = props.bourbonality;
 
   const [image, setImage] = useState('');
