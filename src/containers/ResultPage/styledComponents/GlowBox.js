@@ -4,6 +4,7 @@ const Glow = styled.div`
   flex-wrap: wrap;
   margin-top: 30px;
   margin-bottom: 80px;
+  padding: 30px;
   border: ${props => props.glow ? '1px solid white' : 'none'};
   border-radius: 20px;
   box-shadow:

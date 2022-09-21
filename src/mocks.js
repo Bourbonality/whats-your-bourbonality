@@ -90,7 +90,7 @@ export const results = [
     bourbonality: 'distinct',
     traits: ['introvert', 'emotional', 'doer'],
     color: '#56f6f9',
-    secondary: '#FFF',
+    secondary: '#08021d',
     title: 'Distinct',
     subtitle: 'Your a real original',
     description: {

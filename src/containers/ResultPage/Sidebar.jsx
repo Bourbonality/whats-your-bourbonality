@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Flex, Image, Text } from 'pcln-design-system';
-import { socialMediaIcons } from '../../mocks';
-import { StyledFlex } from './styledComponents/Sidebar';
-import { S3_URL } from '../../services/constants';
+import { socialMediaIcons } from 'mocks';
+import { StyledFlex } from 'containers/ResultPage/styledComponents/Sidebar';
+import { S3_URL } from 'services/constants';
 
 const Sidebar = ({ color, social, bourbonality }) => {
   const [showSidebar, setShowSidebar] = useState(false);

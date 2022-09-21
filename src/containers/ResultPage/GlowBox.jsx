@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Glow } from './styledComponents/GlowBox'
-import { isInViewport } from '../../utils'
+import { Glow } from 'containers/ResultPage2/styledComponents/Section'
+import { isInViewport } from 'utils'
 
 const GlowBox = ({ className, color, children }) => {
-  const [glow, setGlow] = useState(true)
+  const [glow, setGlow] = useState()
 
   window.addEventListener('scroll', () => {
     const box = document.getElementsByClassName(className)[0]
@@ -14,7 +14,6 @@ const GlowBox = ({ className, color, children }) => {
   return (
     <Glow
       justifyContent='center'
-      p={3}
       borderColor={color}
       glow={glow}
       className={className}

@@ -4,7 +4,7 @@ import {
   StyledButton,
   StyledFooter,
   StyledInput,
-} from './styledComponents/Footer';
+} from 'containers/ResultPage/styledComponents/Footer';
 
 const Footer = ({ color, secondary }) => {
   const [showButton, setShowButton] = useState(0);
@@ -35,7 +35,7 @@ const Footer = ({ color, secondary }) => {
             </Text>
           </StyledButton>
           <Text fontSize={1} color={secondary}>
-            Sign up for our newsletter for a chance to win a free shot glass!
+            Sign up for our newsletter for a chance to win a free t-shirt!
           </Text>
           <StyledInput type="email" id="email" placeholder="your email" />
         </Flex>

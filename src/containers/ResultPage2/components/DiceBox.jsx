@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Flex, Image } from 'pcln-design-system'
-import Section from 'containers/ResultPage/Section'
+import { Section } from 'containers/ResultPage2/components';
 import { S3_URL } from 'services/constants'
 
 const DiceBox = ({ bourbonality, color, recommendations }) => {
@@ -21,7 +21,6 @@ const DiceBox = ({ bourbonality, color, recommendations }) => {
 
   return (
     <Section
-      mt={5}
       title={title}
       color={color}
       className='dice-box'
@@ -32,24 +31,23 @@ const DiceBox = ({ bourbonality, color, recommendations }) => {
             flexDirection='column'
             justifyContent='center'
             alignItems='center'
-            p={2}
           >
             <Flex>
-            {rec.notes.map((note, i) => {
-              return (
-                <Flex
-                  height='70px'
-                  width='70px'
-                  p={2}
-                >
-                  <a href='https://www.bourbonality.com'>
-                    <Image src={dice[note]} m={0}/>
-                  </a>
-                </Flex>
-              )
-            })}
+              {rec.notes.map((note, i) => {
+                return (
+                  <Flex
+                    height='70px'
+                    width='70px'
+                    p={2}
+                  >
+                    <a href='https://www.bourbonality.com'>
+                      <Image src={dice[note]} m={0}/>
+                    </a>
+                  </Flex>
+                )
+              })}
+            </Flex>
           </Flex>
-        </Flex>
         )
       })}
     </Section>

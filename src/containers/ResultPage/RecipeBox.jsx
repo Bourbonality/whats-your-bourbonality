@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Flex, Image, Text } from 'pcln-design-system'
+import { TitleImage } from 'containers/ResultPage/styledComponents/ResultPage'
 import styled from 'styled-components'
-import { isInViewport } from '../../utils'
-import { S3_URL } from '../../services/constants'
+import { isInViewport } from 'utils'
+import { S3_URL } from 'services/constants'
 
 const GlowBox = styled(Flex)`
   flex-wrap: wrap;
@@ -44,7 +45,7 @@ const RecipeBox = ({ bourbonality, drink, color }) => {
 
   return (
     <Flex flexDirection='column' alignItems='center'>
-      <Image src={title} width='500px'/>
+      <TitleImage src={title} />
       <GlowBox mb='120px' glow={glow} borderColor={color} className='recipe-box' flexDirection='column' alignItems='center'>
         <Flex flexDirection={['column', 'row']} justifyContent='center' alignItems='center'>
           <Flex flexDirection='column' alignItems='center' pt={3}>

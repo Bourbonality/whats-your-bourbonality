@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Flex, Image, Link } from 'pcln-design-system'
 import styled from 'styled-components'
-import Section from 'containers/ResultPage/Section'
+import { Section } from 'containers/ResultPage2/components';
 import { S3_URL } from 'services/constants'
 
 const ImageFlex = styled(Image)`
     border-radius: 8px;
 `
 
-const MerchBox = ({ bourbonality, recommendations, color }) => {
+const MerchBox = ({ bourbonality, color }) => {
     const [title, setTitle] = useState({})
     const [merch, setMerch] = useState([])
 
@@ -28,27 +28,27 @@ const MerchBox = ({ bourbonality, recommendations, color }) => {
     }, [bourbonality])
 
     return (
-        <Section
-            title={title}
-            className='merch-box'
-            alignItems='center'
-            color={color}
-        >
-            {merch.map(item => {
-                return (
-                    <Flex
-                        flexWrap='wrap'
-                        justifyContent='center'
-                        alignItems='center'
-                        p={2}
-                    >
-                        <Link href={item.link} pr={3}>
-                            <ImageFlex src={item.image} width='300px'/>
-                        </Link>
-                    </Flex>
-                )
-            })}
-        </Section>
+      <Section
+        title={title}
+        className='merch-box'
+        alignItems='center'
+        color={color}
+      >
+        {merch.map(item => {
+          return (
+            <Flex
+              flexWrap='wrap'
+              justifyContent='center'
+              alignItems='center'
+              p={2}
+            >
+              <Link href={item.link} pr={3}>
+                <ImageFlex src={item.image} width='300px'/>
+              </Link>
+            </Flex>
+          )
+        })}
+      </Section>
     )
 }
 

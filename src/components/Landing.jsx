@@ -28,7 +28,7 @@ const Landing = ({ started, setStarted }) => {
         <source src={`${S3_URL}/whats-your-bourbonality.mp4`} type='video/mp4' />
       </StyledVideo>
       <ClickMe showClickMe={showClickMe} loaded={loaded}>
-        <Text color='white' fontSize={5}>Click to Begin</Text>
+        <Text color='white' fontSize={5}>By Clicking Here You Acknowledge You Are Over 21 Years of Age</Text>
       </ClickMe>
     </LandingContainer>
   )

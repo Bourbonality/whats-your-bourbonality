@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import ResultPage from '../ResultPage';
-import { Slide, LoadingPage, ProgressBar } from '../../components';
-import { results, slideData } from '../../mocks';
-import { ShowResultsButton, NextButton } from './styledComponents/Quiz';
+import { Flex } from 'pcln-design-system';
+import ResultPage2 from 'containers/ResultPage2';
+import { Slide, LoadingPage, ProgressBar } from 'components';
+import { results, slideData } from 'mocks';
+import { ShowResultsButton, NextButton } from 'containers/Quiz/styledComponents/Quiz';
 
 const Quiz = () => {
   const [slideNum, setSlideNum] = useState(0);
@@ -16,13 +17,8 @@ const Quiz = () => {
     setBourbonality(results[0]);
   };
 
-  console.log(showResult);
-  console.log(bourbonality);
-  console.log(count);
-  console.log(process.env.NODE_ENV);
-
   return (
-    <>
+    <Flex justifyContent='center'>
       {process.env.NODE_ENV === 'development' ? (
         <ShowResultsButton onClick={showResults}>
           {showResult ? 'Hide Results' : 'Show Results'}
@@ -46,18 +42,12 @@ const Quiz = () => {
       )}
 
       <LoadingPage
-        Page
         showLoading={!!bourbonality}
         showResult={showResult}
         setShowResult={setShowResult}
       />
       {bourbonality && showResult && (
-        <ResultPage
-          count={count}
-          bourbonality={bourbonality}
-          setBourbonality={setBourbonality}
-          showResult={showResult}
-        />
+        <ResultPage2 bourbonality={bourbonality} />
       )}
       <ProgressBar count={count} slides={slideData} />
       {!showResult &&
@@ -73,7 +63,7 @@ const Quiz = () => {
             />
           );
         })}
-    </>
+    </Flex>
   );
 };
 

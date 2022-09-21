@@ -1,5 +1,5 @@
 import { useRecoilState } from 'recoil';
-import { scoresAtom } from '../atoms/scoresAtom';
+import { scoresAtom } from 'atoms/scoresAtom';
 
 export const useScores = () => {
   const [scores, setScores] = useRecoilState(scoresAtom);

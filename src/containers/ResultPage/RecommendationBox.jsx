@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Flex, Image } from 'pcln-design-system'
-import Section from './Section'
-import { S3_URL } from '../../services/constants'
+import Section from 'containers/ResultPage/Section'
+import { S3_URL } from 'services/constants'
 
 const RecommendationBox = ({ bourbonality, recommendations, color }) => {
   const [title, setTitle] = useState({})

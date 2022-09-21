@@ -1,18 +1,20 @@
 import React from 'react';
 import { Flex, Text } from 'pcln-design-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 import {
   faTwitterSquare,
   faFacebookSquare,
 } from '@fortawesome/free-brands-svg-icons';
-import { TitleText } from './styledComponents/ResultPage';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-import { FacebookShareButton, TwitterShareButton } from 'react-share';
-import Section from './Section';
-import { detectMob } from 'utils/isMobile';
-import { HyperLink } from 'containers/ResultPage/styledComponents/shareResults';
 
-const ShareResults = ({ bourbonality, color, image, backgroundColor }) => {
+import { TitleText } from 'containers/ResultPage2/styledComponents/ResultPage';
+import { HyperLink } from 'containers/ResultPage2/styledComponents/ShareResults';
+import { FacebookShareButton, TwitterShareButton } from 'react-share';
+import { Section } from 'containers/ResultPage2/components';
+import { detectMob } from 'utils/isMobile';
+
+const ShareResults = ({ bourbonality, color, image, description }) => {
+
   const handleSharing = async () => {
     try {
       await navigator
@@ -56,25 +58,25 @@ const ShareResults = ({ bourbonality, color, image, backgroundColor }) => {
                 <FontAwesomeIcon icon={faFacebookSquare} />
               </Text>
             </FacebookShareButton>
-            <HyperLink
-              mt={['4%']}
-              mb={['2.5%']}
-              mx={10}
-              fontSize={[5, 5, 6]}
-              bg={color}
-              color={backgroundColor}
+            <Flex
+              mt='8px'
+              height='42px'
+              onClick={() => {
+                navigator.clipboard.writeText(
+                  `I am ${bourbonality}, take the quiz and find our what your Bourbonality is! https://master.dc2srfrcb0abs.amplifyapp.com/`
+                );
+                alert('Copied to clipboard!');
+              }}
             >
-              <div
-                onClick={() => {
-                  navigator.clipboard.writeText(
-                    `I am ${bourbonality}, take the quiz and find our what your Bourbonality is! https://master.dc2srfrcb0abs.amplifyapp.com/`
-                  );
-                  alert('Copied to clipboard!');
-                }}
+              <HyperLink
+                mx={10}
+                fontSize={[5, 5, 6]}
+                bg={color}
+                pt='2px'
               >
-                <FontAwesomeIcon icon={faLink} />
-              </div>
-            </HyperLink>
+                  <FontAwesomeIcon color={description.backgroundColor} icon={faLink} />
+              </HyperLink>
+            </Flex>
           </>
         )}
       </Flex>
