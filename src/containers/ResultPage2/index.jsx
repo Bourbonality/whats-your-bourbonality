@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { StyledFlex, Background, StyledImage } from 'containers/ResultPage2/styledComponents/ResultPage'
 import { S3_URL } from 'services/constants';
-import { BusinessInfo, Description, DiceBox, MerchBox, RecipeBox, RecommendationBox, ShareResults, Footer } from 'containers/ResultPage2/components';
+import { BusinessInfo, Description, DiceBox, MerchBox, RecipeBox, ShareResults } from 'containers/ResultPage2/components';
 
 const ResultPage2 = (props) => {
   const { bourbonality, description } = props.bourbonality;

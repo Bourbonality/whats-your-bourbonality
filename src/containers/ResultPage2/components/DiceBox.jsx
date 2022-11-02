@@ -4,24 +4,22 @@ import { Section } from 'containers/ResultPage2/components';
 import { S3_URL } from 'services/constants'
 
 const DiceBox = ({ bourbonality, color, recommendations }) => {
-  const [title, setTitle] = useState({})
   const [dice, setDice] = useState({})
 
-  useEffect(async () => {
+  useEffect(() => {
     const newDice = {}
     recommendations.forEach(rec => {
-      rec.notes.forEach(async note => {
+      rec.notes.forEach(note => {
         newDice[note] = `${S3_URL}/dice/${note}.png`
       })
     })
     setDice(newDice)
-
-    setTitle(`${S3_URL}/titles/tasting-notes/${bourbonality}.png`)
-  }, [bourbonality])
+  }, [recommendations, bourbonality])
 
   return (
     <Section
-      title={title}
+      sectionTitle='tasting-notes'
+      bourbonality={bourbonality}
       color={color}
       className='dice-box'
     >

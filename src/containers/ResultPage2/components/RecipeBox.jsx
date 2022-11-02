@@ -12,19 +12,16 @@ const StyledImage = styled(Image)`
 `
 
 const RecipeBox = ({ bourbonality, drink, color }) => {
-  const [title, setTitle] = useState({})
   const [recipeImage, setRecipeImage] = useState('')
 
-  useEffect(async () => {
+  useEffect(() => {
     setRecipeImage(`${S3_URL}/drink/${bourbonality}.png`)
-
-    const fetchedTitle = `${S3_URL}/titles/cocktail/${bourbonality}.png`
-    setTitle(fetchedTitle)
   }, [bourbonality])
 
   return (
     <Section
-      title={title}
+      sectionTitle='cocktail'
+      bourbonality={bourbonality}
       color={color}
       className='recipe-box'
     >

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Flex, Image, Text } from 'pcln-design-system';
+import { Flex, Box, Text } from 'pcln-design-system';
 import { socialMediaIcons } from 'mocks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import { TitleText } from 'containers/ResultPage2/styledComponents/ResultPage';
-import { HyperLink } from 'containers/ResultPage2/styledComponents/ShareResults';
+import { HyperLink, SocialLink } from 'containers/ResultPage2/styledComponents/ShareResults';
 import { FacebookShareButton, TwitterShareButton } from 'react-share';
 import { Section } from 'containers/ResultPage2/components';
 import { S3_URL } from 'services/constants';
@@ -29,8 +29,6 @@ const ShareResults = ({ social, bourbonality, color, image, description }) => {
     setLinks(socialMediaIcons.map((icons) => icons.link));
   }, [social, bourbonality]);
 
-  console.log('*** icons:', icons)
-  console.log('*** links:', links)
 // https://whats-your-bourbonality-assets210734-staging.s3.us-east-2.amazonaws.com/public/social-media-icons/white/facebook.png"
 // https://whats-your-bourbonality-assets210734-staging.s3.us-east-2.amazonaws.com/public/social-media-icons/white/twitter.png
 
@@ -53,15 +51,17 @@ const ShareResults = ({ social, bourbonality, color, image, description }) => {
       <TitleText color={color} fontSize={[5, 6, 7]}>
          Share my results
       </TitleText>
-      <Flex justifyContent="center">
+      <Flex justifyContent="space-around" p={3}>
         <TwitterShareButton
           url={`https://master.dc2srfrcb0abs.amplifyapp.com/`}
           title={`I am ${bourbonality}, take the quiz and find our what your Boubonality is!`}
           hashtags={['WhatsYourBoubonality?']}
         >
-          <Text fontSize={[6, 7, 8]} mx={10} color={color}>
-            <FontAwesomeIcon icon={faTwitterSquare} />
-          </Text>
+          <SocialLink height={[50, 100]} width={[50, 100]} color={color} justifyContent='center' alignItems='center'>
+            <Text fontSize={[57, 115]}>
+              <FontAwesomeIcon icon={faTwitterSquare} />
+            </Text>
+          </SocialLink>
         </TwitterShareButton>
         <FacebookShareButton
           url={`https://master.dc2srfrcb0abs.amplifyapp.com/`}
@@ -69,30 +69,29 @@ const ShareResults = ({ social, bourbonality, color, image, description }) => {
           hashtag="#WhatsYourBourbonality"
           imageUrl={image}
         >
-          <Flex width="100%" flex-wrap={true}>
-            <Image src='https://whats-your-bourbonality-assets210734-staging.s3.us-east-2.amazonaws.com/public/social-media-icons/white/facebook.png' height="45px" />
-          </Flex>
-          <Text fontSize={[6, 7, 8]} mx={10} color={color}>
-            <FontAwesomeIcon icon={faFacebookSquare} />
-          </Text>
+          <SocialLink height={[50, 100]} width={[50, 100]} color={color} justifyContent='center' alignItems='center'>
+            <Text fontSize={[57, 115]}>
+              <FontAwesomeIcon icon={faFacebookSquare} />
+            </Text>
+          </SocialLink>
         </FacebookShareButton>
-        <Flex
+        <HyperLink
           onClick={() => {
             navigator.clipboard.writeText(
               `I am ${bourbonality}, take the quiz and find our what your Bourbonality is! https://master.dc2srfrcb0abs.amplifyapp.com/`
             );
             alert('Copied to clipboard!');
           }}
-          p={2}
+          height={[50, 100]}
+          width={[50, 100]}
+          bg={color}
+          justifyContent='center'
+          alignItems='center'
         >
-           <HyperLink
-            fontSize={[5, 5, 6]}
-            bg={color}
-            pt='2px'
-          >
-             <FontAwesomeIcon color={description.backgroundColor} icon={faLink} />
-           </HyperLink>
-         </Flex>
+          <Text fontSize={[5, 7, 8]} color={color}>
+            <FontAwesomeIcon color={description.backgroundColor} icon={faLink} />
+          </Text>
+        </HyperLink>
       </Flex>
     </Section>
   )

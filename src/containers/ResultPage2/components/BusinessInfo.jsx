@@ -22,8 +22,8 @@ const BusinessInfo = ({ social, bourbonality }) => {
   }, [social, bourbonality]);
 
   return (
-    <Flex bg='#000000' width='100vw' flexWrap='wrap' justifyContent='center' mt={75} py={25}>
-      <Flex maxWidth='450px' width='100%' flexDirection='column' pr={50} pl={50} color='#FFFFFF'>
+    <Flex bg='#000000' width='100vw' flexWrap='wrap' justifyContent='center' pt={20} pb={50}>
+      <Flex maxWidth='450px' width='100%' flexDirection='column' px={50} color='#FFFFFF'>
         <Heading.h2>What's your Bourbonality</Heading.h2>
         <Text>
           A place for anyone who wants to learn more about bourbon. Follow us &
@@ -32,19 +32,18 @@ const BusinessInfo = ({ social, bourbonality }) => {
         <Text>Cheers! 🥃🥃🥃</Text>
       </Flex>
       <Flex
-        width='40vw'
+        width={['100vw', '40vw']}
         minWidth='300px'
         flexDirection="column"
         className="linksToSocialMedia"
         justifyContent="center"
         alignItems="center"
-        pr={10}
       >
         <Heading.h2 color='white'>Follow us on social media!</Heading.h2>
         <Flex flexDirection="row" mt={2} width={2 / 3} alignItems="center">
           {icons.map((icon, i) => {
             return (
-              <Flex width="100%" flex-wrap={true}>
+              <Flex justifyContent='center' width="100%" flex-wrap={true}>
                 <a target="_blank" rel="noopener noreferrer" href={links[i]}>
                   <Image src={icon} height="45px" />
                 </a>
