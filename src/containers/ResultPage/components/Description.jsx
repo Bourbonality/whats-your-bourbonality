@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'pcln-design-system';
-import { DescriptionFlex, TitleText } from 'containers/ResultPage2/styledComponents/ResultPage'
+import { DescriptionFlex, TitleText } from 'containers/ResultPage/styledComponents/ResultPage'
 
 const Description = ({color, description, subtitle}) => {
   return (<DescriptionFlex flexDirection="column" justifyContent="center">

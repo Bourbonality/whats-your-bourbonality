@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 import { Flex, Image, Text, Heading } from 'pcln-design-system';
 import { socialMediaIcons } from 'mocks';
 import { S3_URL } from 'services/constants';
+import text from 'services/text';
 
 const BusinessInfo = ({ social, bourbonality }) => {
   const [icons, setIcons] = useState([]);
   const [links, setLinks] = useState();
+  const { Common, Footer } = text;
 
   useEffect(() => {
     const iconsArray = [];
@@ -24,12 +26,9 @@ const BusinessInfo = ({ social, bourbonality }) => {
   return (
     <Flex bg='#000000' width='100vw' flexWrap='wrap' justifyContent='center' pt={20} pb={50}>
       <Flex maxWidth='450px' width='100%' flexDirection='column' px={50} color='#FFFFFF'>
-        <Heading.h2>What's your Bourbonality</Heading.h2>
-        <Text>
-          A place for anyone who wants to learn more about bourbon. Follow us &
-          begin developing your Bourbonality™ today!
-        </Text>
-        <Text>Cheers! 🥃🥃🥃</Text>
+        <Heading.h2>{Common.whatsYourBourbonality}</Heading.h2>
+        <Text mb={3}>{Footer.description}</Text>
+        <Text>{Footer.cheers}</Text>
       </Flex>
       <Flex
         width={['100vw', '40vw']}

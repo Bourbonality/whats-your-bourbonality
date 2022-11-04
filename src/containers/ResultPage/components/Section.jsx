@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Flex } from 'pcln-design-system';
-import { Glow } from 'containers/ResultPage2/styledComponents/Section'
+import { Glow } from 'containers/ResultPage/styledComponents/Section'
 import { isInViewport } from 'utils'
 import { TitleImage } from 'containers/ResultPage/styledComponents/ResultPage'
 import { S3_URL } from 'services/constants'

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Flex, Image, Text } from 'pcln-design-system'
 import styled from 'styled-components'
 
-import { Section } from 'containers/ResultPage2/components';
+import { Section } from 'containers/ResultPage/components';
 import { S3_URL } from 'services/constants'
 
 const StyledImage = styled(Image)`

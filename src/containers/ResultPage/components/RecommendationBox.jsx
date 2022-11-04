@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Flex, Image } from 'pcln-design-system'
-import Section from 'containers/ResultPage/Section'
+import { Section } from 'containers/ResultPage/components';
 import { S3_URL } from 'services/constants'
 
 const RecommendationBox = ({ bourbonality, recommendations, color }) => {

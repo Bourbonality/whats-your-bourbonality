@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Flex } from 'pcln-design-system';
-import ResultPage2 from 'containers/ResultPage2';
+import ResultPage from 'containers/ResultPage';
 import { Slide, LoadingPage, ProgressBar } from 'components';
 import { results, slideData } from 'mocks';
 import { ShowResultsButton, NextButton } from 'containers/Quiz/styledComponents/Quiz';
@@ -47,7 +47,7 @@ const Quiz = () => {
         setShowResult={setShowResult}
       />
       {bourbonality && showResult && (
-        <ResultPage2 bourbonality={bourbonality} />
+        <ResultPage bourbonality={bourbonality} />
       )}
       <ProgressBar count={count} slides={slideData} />
       {!showResult &&
