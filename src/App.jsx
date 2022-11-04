@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Landing } from './components'
-import { Quiz } from './containers'
+import { Landing } from 'components'
+import { Quiz } from 'containers'
 
 import './App.css';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { StyledFlex, Background, StyledImage } from 'containers/ResultPage/styledComponents/ResultPage'
 import { S3_URL } from 'services/constants';
-import { AnotherRound, BusinessInfo, Description, DiceBox, MerchBox, RecipeBox, ShareResult } from 'containers/ResultPage/components';
+import { AnotherRound, BusinessInfo, Description, DiceBox, MerchBox, RecipeBox, ShareResults } from 'containers/ResultPage/components';
 
 const ResultPage = (props) => {
   const { bourbonality, description } = props.bourbonality;
@@ -19,7 +19,7 @@ const ResultPage = (props) => {
         <StyledImage src={image} />
         <Description {...props.bourbonality} />
         {/* <RecommendationBox {...props.bourbonality} /> */}
-        <ShareResult {...props.bourbonality} />
+        <ShareResults {...props.bourbonality} />
         <DiceBox {...props.bourbonality} />
         <RecipeBox {...props.bourbonality} />
         <MerchBox {...props.bourbonality} />

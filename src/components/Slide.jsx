@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Flex } from 'pcln-design-system'
-import { results } from '../mocks'
-import { useScores } from '../hooks/useScores'
-import { useTraits } from '../hooks/useTraits'
-import { S3_URL } from '../services/constants'
-import { isMobile } from '../utils'
-import { StyledSlide, StyledBox, AnswerBox } from './styledComponents/Slide'
+import { results } from 'mocks'
+import { useScores } from 'hooks/useScores'
+import { useTraits } from 'hooks/useTraits'
+import { S3_URL } from 'services/constants'
+import { isMobile } from 'utils'
+import { StyledSlide, StyledBox, AnswerBox } from 'components/styledComponents/Slide'
 
 const Slide = ({
   slide,
