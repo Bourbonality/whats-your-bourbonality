@@ -6,14 +6,14 @@ import {
   faTwitterSquare,
   faFacebookSquare,
 } from '@fortawesome/free-brands-svg-icons';
-import { HyperLink, SocialLink } from 'containers/ResultPage/styledComponents/ShareResults';
+import { HyperLink, SocialLink } from 'containers/ResultPage/styledComponents/ShareResult';
 import { FacebookShareButton, TwitterShareButton } from 'react-share';
 import { Section } from 'containers/ResultPage/components';
 import { S3_URL, bourbonalityUrl } from 'services/constants';
 import text from 'services/text'
 import { interpolate } from 'utils';
 
-const ShareResults = ({ bourbonality, color, image, description }) => {
+const ShareResult = ({ bourbonality, color, image, description }) => {
   const { Share } = text;
 
   return (
@@ -67,4 +67,4 @@ const ShareResults = ({ bourbonality, color, image, description }) => {
   )
 };
 
-export default ShareResults;
+export default ShareResult;

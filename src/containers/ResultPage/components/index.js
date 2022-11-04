@@ -1,6 +1,6 @@
 export { default as Description } from 'containers/ResultPage/components/Description';
 export { default as AnotherRound } from 'containers/ResultPage/components/AnotherRound';
-export { default as ShareResults } from 'containers/ResultPage/components/ShareResults';
+export { default as ShareResult } from 'containers/ResultPage/components/ShareResult';
 export { default as RecommendationBox } from 'containers/ResultPage/components/RecommendationBox';
 export { default as DiceBox } from 'containers/ResultPage/components/DiceBox';
 export { default as RecipeBox } from 'containers/ResultPage/components/RecipeBox';
