@@ -160,7 +160,7 @@ export const results = [
 				'https://uc8e3d6f44cc4e6b403dee69edef.previews.dropboxusercontent.com/p/thumb/ABIY6DktSdzmoMWykj9DW455xkR_ozz6YtHHzPVCHlSK75DLuOdZjYOMuWjB3vJJ03q_WNXI8UC6WfPkWJs8PsI0zN7IL75Esn9qX-XRMHWW2CjeKvM3z0zywH8S8WgzzWosLbLIJbxXUiNH7Xvh6SpRZclO1t4WRX8z9oWlUbJqVe3XtsYS7p0e277HzFttMVeUB3FsdvxyK7qGYqAA1Ly1pqwce9CFX_olvFGO0pTUjlzfzyxrR5VTLS7YYkJi8BIGbHFzhjjw-upViZdnlHhE4-w19IkKiK9NFk3AKvy5lQhH4VOTwnAcgvERTUtQA_llOyTL5cKHfR2A6VHrNs-m-Ao86QzvVuzBkLMFghLgNg/p.png?fv_content=true&size_mode=5',
 			recipeUrl: '',
 		},
-		social: 'green',
+		social: 'white',
 		recommendations: [
 			{
 				level: 'Economy',
