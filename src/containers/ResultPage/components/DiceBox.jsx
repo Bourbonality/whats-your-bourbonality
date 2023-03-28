@@ -38,7 +38,7 @@ const DiceBox = ({ bourbonality, color, recommendations }) => {
                     width='70px'
                     p={2}
                   >
-                    <a href='https://www.bourbonality.com'>
+                    <a href='https://shop.lunacyproductions.com/collections/bourbonality/products/new-bourbonality%E2%84%A2-bourbon-tasting-dice'>
                       <Image src={dice[note]} m={0}/>
                     </a>
                   </Flex>

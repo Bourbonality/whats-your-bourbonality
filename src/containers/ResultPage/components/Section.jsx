@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Flex } from 'pcln-design-system';
+import { Flex, Link } from 'pcln-design-system';
 import { Glow } from 'containers/ResultPage/styledComponents/Section'
 import { isInViewport } from 'utils'
 import { TitleImage } from 'containers/ResultPage/styledComponents/ResultPage'
 import { S3_URL } from 'services/constants'
 
-const Section = ({ bourbonality, sectionTitle, color, alignItems, className, mt, children }) => {
+const Section = ({ bourbonality, sectionTitle, color, alignItems, className, mt, link, children }) => {
   const [title, setTitle] = useState({})
   const [glow, setGlow] = useState()
 
@@ -21,7 +21,7 @@ const Section = ({ bourbonality, sectionTitle, color, alignItems, className, mt,
 
   return (
     <>
-      {sectionTitle && <TitleImage src={title} />}
+      {sectionTitle && link ? <Link href={link}><TitleImage src={title} /></Link> : <TitleImage src={title} />}
       <Flex flexDirection='column' alignItems={alignItems || 'none'} mt={mt || 0} mx={2}>
         <Glow
           justifyContent='center'

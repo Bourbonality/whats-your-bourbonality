@@ -10,6 +10,7 @@ const ImageFlex = styled(Image)`
 
 const MerchBox = ({ bourbonality, color }) => {
     const [merch, setMerch] = useState([])
+    const collectionLink = `https://shop.lunacyproductions.com/collections/i-am-${bourbonality}/products/i-am-${bourbonality}-bourbonality`
 
     useEffect(() => {
         const hat = `${S3_URL}/merch/hat/${bourbonality}.png`
@@ -17,13 +18,13 @@ const MerchBox = ({ bourbonality, color }) => {
         setMerch([
             {
                 image: hat,
-                link: 'https://shop.lunacyproductions.com/collections/bourbonality/products/bourbonality-hat'
+                link: `${collectionLink}-hat`
             }, {
                 image: shirt,
-                link: 'https://shop.lunacyproductions.com/collections/bourbonality/products/bourbonality-t-shirt-1'
+                link: `${collectionLink}-tee`
             }
         ])
-    }, [bourbonality])
+    }, [bourbonality, collectionLink])
 
     return (
       <Section
@@ -32,6 +33,7 @@ const MerchBox = ({ bourbonality, color }) => {
         className='merch-box'
         alignItems='center'
         color={color}
+        link={`https://shop.lunacyproductions.com/collections/i-am-${bourbonality}`}
       >
         <Flex
           flexWrap='wrap'
