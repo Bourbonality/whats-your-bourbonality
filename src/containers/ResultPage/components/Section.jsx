@@ -21,7 +21,7 @@ const Section = ({ bourbonality, sectionTitle, color, alignItems, className, mt,
 
   return (
     <>
-      {sectionTitle && link ? <Link href={link}><TitleImage src={title} /></Link> : <TitleImage src={title} />}
+      {sectionTitle && (link ? <Link target='_blank' href={link}><TitleImage src={title} /></Link> : <TitleImage src={title} />)}
       <Flex flexDirection='column' alignItems={alignItems || 'none'} mt={mt || 0} mx={2}>
         <Glow
           justifyContent='center'

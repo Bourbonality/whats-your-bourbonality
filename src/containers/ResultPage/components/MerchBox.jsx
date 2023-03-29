@@ -24,7 +24,7 @@ const MerchBox = ({ bourbonality, color }) => {
                 link: `${collectionLink}-tee`
             }
         ])
-    }, [bourbonality, collectionLink])
+    }, [bourbonality, ])
 
     return (
       <Section
@@ -43,10 +43,9 @@ const MerchBox = ({ bourbonality, color }) => {
         >
           {merch.map(item => {
             return (
-              
-                <Link href={item.link} pr={3}>
-                  <ImageFlex src={item.image} width='300px'/>
-                </Link>
+              <Link target='_blank' href={item.link} pr={3}>
+                <ImageFlex src={item.image} width='300px'/>
+              </Link>
             )
           })}
         </Flex>
