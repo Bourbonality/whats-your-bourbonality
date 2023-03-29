@@ -24,7 +24,7 @@ const MerchBox = ({ bourbonality, color }) => {
                 link: `${collectionLink}-tee`
             }
         ])
-    }, [bourbonality, ])
+    }, [bourbonality, collectionLink])
 
     return (
       <Section
