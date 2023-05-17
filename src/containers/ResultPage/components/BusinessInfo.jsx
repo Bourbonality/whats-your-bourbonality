@@ -24,8 +24,9 @@ const BusinessInfo = ({ social, bourbonality }) => {
   }, [social, bourbonality]);
 
   return (
-    <Flex bg='#000000' width='100vw' flexWrap='wrap' justifyContent='center' pt={20} pb={50}>
+    <Flex color='#000000' width='100vw' flexWrap='wrap' justifyContent='center' pt={20} pb={50}>
       <Flex maxWidth='450px' width='100%' flexDirection='column' px={50} color='#FFFFFF'>
+        {/* eslint-disable-next-line */}
         <Heading.h2>{Common.whatsYourBourbonality}</Heading.h2>
         <Text mb={3}>{Footer.description}</Text>
         <Text>{Footer.cheers}</Text>
@@ -38,11 +39,12 @@ const BusinessInfo = ({ social, bourbonality }) => {
         justifyContent="center"
         alignItems="center"
       >
+        {/* eslint-disable-next-line */}
         <Heading.h2 color='white'>Follow us on social media!</Heading.h2>
         <Flex flexDirection="row" mt={2} width={2 / 3} alignItems="center">
           {icons.map((icon, i) => {
             return (
-              <Flex justifyContent='center' width="100%" flex-wrap={true}>
+              <Flex key={icon} justifyContent='center' width="100%" flex-wrap={true}>
                 <a target="_blank" rel="noopener noreferrer" href={links[i]}>
                   <Image src={icon} height="45px" />
                 </a>

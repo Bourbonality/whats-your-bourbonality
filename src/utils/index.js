@@ -18,4 +18,9 @@ const interpolate = (template, ...params) => {
 	return template;
 };
 
-export { isMobile, isInViewport, interpolate };
+const capitalizeFirstLetter = str => {
+    const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+    return capitalized;
+}
+
+export { isMobile, isInViewport, interpolate, capitalizeFirstLetter };

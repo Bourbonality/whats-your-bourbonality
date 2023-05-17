@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Flex } from 'pcln-design-system'
 import { results } from 'mocks'
 import { useScores } from 'hooks/useScores'
-import { useTraits } from 'hooks/useTraits'
 import { S3_URL } from 'services/constants'
 import { isMobile } from 'utils'
 import { StyledSlide, StyledBox, AnswerBox } from 'components/styledComponents/Slide'
@@ -15,7 +14,6 @@ const Slide = ({
   setBourbonality,
 }) => {
   const { scores, updateScores } = useScores();
-  const { traits, updateTraits } = useTraits()
   const [slideData, setSlideData] = useState([])
 
   useEffect(() => {
@@ -29,30 +27,28 @@ const Slide = ({
       }
     )
     setSlideData(newSlideData)
-  }, [])
+  }, [slide])
 
   useEffect(() => {
+    const scoresArr = Object.entries(scores);
+    scoresArr.sort((a,b) => b[1] - a[1]);
+
     if (count === 15) {
-      let tally = 0
-      for (let i = 0; i < results.length; i++) {
-        const resultTraits = results[i].traits
-        for (let k = 0; k < resultTraits.length; k++) {
-          const trait = resultTraits[k]
-          if (traits[trait]) tally++
-        }
-        if (tally === 3) setBourbonality(results[i])
-        else tally = 0
-      }
+      const finalTraits = new Set();
+
+      scoresArr.forEach((score, i) => {
+        if (i < 3) finalTraits.add(score[0]);
+      })
+
+      const bourbonality = results.find(result => result.traits.every(trait => finalTraits.has(trait)));
+
+      setBourbonality(bourbonality);
     }
-  }, [count, traits])
+  }, [count, scores, setBourbonality])
 
   const handleClick = (trait) => {
-    updateTraits(scores)
     updateScores(trait)
-
-    if (count <= 14) {
-      setCount(count + 1)
-    }
+    if (count <= 14) setCount(count + 1)
   }
 
   return (

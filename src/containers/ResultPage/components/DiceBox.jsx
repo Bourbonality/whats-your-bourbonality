@@ -29,14 +29,16 @@ const DiceBox = ({ bourbonality, color, recommendations }) => {
             flexDirection='column'
             justifyContent='center'
             alignItems='center'
+            key={rec.level}
           >
             <Flex>
-              {rec.notes.map((note, i) => {
+              {rec.notes.map((note) => {
                 return (
                   <Flex
                     height='70px'
                     width='70px'
                     p={2}
+                    key={note}
                   >
                     <a target='_blank' rel="noopener noreferrer" href='https://shop.lunacyproductions.com/collections/bourbonality/products/new-bourbonality%E2%84%A2-bourbon-tasting-dice'>
                       <Image src={dice[note]} m={0}/>

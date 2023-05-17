@@ -43,7 +43,7 @@ const MerchBox = ({ bourbonality, color }) => {
         >
           {merch.map(item => {
             return (
-              <Link target='_blank' href={item.link} pr={3}>
+              <Link key={item.image} target='_blank' href={item.link} pr={3}>
                 <ImageFlex src={item.image} width='300px'/>
               </Link>
             )

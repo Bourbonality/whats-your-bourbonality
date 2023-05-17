@@ -10,7 +10,7 @@ const text = {
 	Share: {
 		title: 'Share my results',
 		shareAlert:
-			'My Boubonality is {0}, take the quiz and find out what your Bourbonality is',
+			'My Bourbonality is {0}, take the quiz and find out what your Bourbonality is',
 		clipboard: 'Copied to clipboard!',
 	},
 };

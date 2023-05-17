@@ -7,7 +7,7 @@ export const results = [
 		title: 'Bold',
 		subtitle: 'The world is your playground',
 		description: {
-			text: "You are feisty and energetic, always in motion, always ready for whatever comes next. You're aggressively outgoing and never afraid of confrontation. But those who can keep up with you appreciate the way you push them out of their confort zone. You're fiercely individual, skeptical of authority, and willing to take risks",
+			text: "You are feisty and energetic, always in motion and always ready for whatever comes next. You're aggressively outgoing and never afraid of confrontation. But those who can keep up with you appreciate the way you push them out of their comfort zone. You're fiercely individual, skeptical of authority, and willing to take risks.",
 			backgroundColor: '#1a1a17',
 		},
 		drink: {
@@ -94,7 +94,7 @@ export const results = [
 		title: 'Distinct',
 		subtitle: "You're a real original",
 		description: {
-			text: `You can be wild, unpredictable, and impulsive. You get itchy when someone talks to you about "the rules." You're only rule is to be yourself and live your truth. You never plan too far ahead, but that's okay because no matter what happens, you know how to roll with the punches. You never know where the night will take you, but you're up for whatever! YOLO!`,
+			text: `You can be wild, unpredictable, and impulsive. You get itchy when someone talks to you about "the rules." Your only rule is to be yourself and live your truth. You never plan too far ahead, but that's okay because no matter what happens, you know how to roll with the punches. You never know where the night will take you, but you're up for whatever! YOLO!`,
 			backgroundColor: '#08021d',
 		},
 		drink: {
@@ -138,7 +138,7 @@ export const results = [
 		title: 'Enchanting',
 		subtitle: 'You get joy by bringing other people joy',
 		description: {
-			text: 'You’re helpful and polite, and will do anything to make a friend crack a smile. You surround yourself with people you like, and distance yourself from toxic influences. Still, you are a very private person and would rather not be the center of attention. You believe your mission in life is to make the world a better place. ',
+			text: 'You’re helpful and polite, and will do anything to make a friend crack a smile. You surround yourself with people you like and distance yourself from toxic influences. Still, you are a very private person and would rather not be the center of attention. You believe your mission in life is to make the world a better place. ',
 			backgroundColor: '#001a20',
 		},
 		drink: {
@@ -268,7 +268,7 @@ export const results = [
 		title: 'Smooth',
 		subtitle: 'People often assume that everything comes easy to you',
 		description: {
-			text: "...but it's really due to your hard work in building relationships with people. You’re not very excitable, and tend to keep a level head. You’re personable and outgoing, and have boundless energy and capacity for socializing. But that doesn’t mean you don’t enjoy some alone time to relax and recharge.",
+			text: "...but it's really due to your hard work in building relationships with people. You’re not very excitable and tend to keep a level head. You’re personable and outgoing, and have boundless energy and capacity for socializing. But that doesn’t mean you don’t enjoy some alone time to relax and recharge.",
 			backgroundColor: '#0e0300',
 		},
 		drink: {

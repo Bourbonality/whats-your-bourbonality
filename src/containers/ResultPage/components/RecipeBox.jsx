@@ -36,7 +36,7 @@ const RecipeBox = ({ bourbonality, drink, color }) => {
           <Text textAlign={['center', 'left', 'left']} color='white' pb={3} px={3}>
             <Text>
               <h3>INGREDIENTS</h3>
-              {drink.ingredients.map(ing => <p>{ing}</p>)}
+              {drink.ingredients.map(ingredient => <p key={ingredient}>{ingredient}</p>)}
             </Text>
             <Text>
               <h3>DIRECTIONS</h3>
