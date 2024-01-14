@@ -2,10 +2,13 @@ import React, { useEffect } from 'react'
 import { LoadingContainer, StyledVideo } from './styledComponents/LoadingPage'
 import { S3_URL } from '../services/constants'
 
-const LoadingPage = ({ showResult, showLoading, setShowResult }) => {
+const LoadingPage = ({ showResult, setLoadResult, showLoading, setShowResult }) => {
     useEffect(() => {
-        if (showLoading) window.setTimeout(() => setShowResult(true), 4000)
-    }, [showLoading])
+        if (showLoading) {
+            window.setTimeout(() => setLoadResult(true), 1000)
+            window.setTimeout(() => setShowResult(true), 5000)
+        }
+    }, [showLoading, setShowResult, setLoadResult])
 
     return (
         <LoadingContainer

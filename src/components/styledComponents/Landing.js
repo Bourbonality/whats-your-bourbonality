@@ -21,8 +21,10 @@ const StyledVideo = styled.video`
 const ClickMe = styled(Flex)`
   position: absolute;
   z-index: 200;
+  cursor: pointer;
+  width: 300px;
   opacity: ${props => props.showClickMe ? '1' : '0'};
-  top: ${props => props.showClickMe ? '80vh' : '90vh'};
+  top: ${props => props.showClickMe ? '78vh' : '90vh'};
   transition: 0.8s ease-in-out top, 1.4s ease-in-out opacity;
   font-family: 'Rokkitt', serif;
   animation: ${props => props.loaded ? 'fade 4s infinite' : 'none'};

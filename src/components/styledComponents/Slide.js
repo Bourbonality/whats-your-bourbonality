@@ -13,14 +13,54 @@ const StyledSlide = styled(Flex)`
     };
 `
 
+// const StyledBox = styled.button`
+//   position: relative;
+//   top: ${props =>(!props.active && !props.answered && props.index === 0 && props.i % 2 === 0) || (!props.active && !props.answered && props.index === 1 && props.i % 2 === 1)
+//     ? '100vh'
+//       : (!props.active && !props.answered && props.index === 1 && props.i % 2 === 0) || (!props.active && !props.answered && props.index === 0 && props.i % 2 === 1)
+//       ? '-100vh'
+//         : 0};
+//   left: 0;
+//   height: 100vh;
+//   width: 50vw;
+//   background-image: ${props => `url(${props.imageUrl})`};
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   border: none;
+//   filter: grayscale(80%);
+//   transition: 0.25s ease-in-out filter, 0.7s ease-in-out top, 0.7s ease-in-out left;
+//   outline: none;
+//   &:hover {
+//     transition: 0.25s ease-in-out filter, 0.7s ease-in-out top, 0.7s ease-in-out left;
+//     filter: grayscale(0%);
+//   };
+//   @media only screen
+//     and (min-width: 280px)
+//     and (max-width: 560px) {
+//       top: 0;
+//       left: ${props => (!props.active && !props.answered && props.index === 0 && props.i % 2 === 0) || (!props.active && !props.answered && props.index === 1 && props.i % 2 === 1)
+//         ? '100vw'
+//           : (!props.active && !props.answered && props.index === 1 && props.i % 2 === 0) || (!props.active && !props.answered && props.index === 0 && props.i % 2 === 1)
+//           ? '-100vw'
+//             : 0};
+//     };
+//   @media only screen
+//     and (min-width: 280px)
+//     and (max-width: 560px) {
+//       height: 50vh;
+//       width: 100vw;
+//     };
+//   @media only screen
+//     and (min-device-width: 280px)
+//     and (max-device-width: 830px)
+//     and (-webkit-min-device-pixel-ratio: 2) {
+//       filter: grayscale(${props => props.active ? '0%' : '100%'});
+//     };
+// `
+
 const StyledBox = styled.button`
   position: relative;
-  top: ${props =>(!props.active && !props.answered && props.index === 0 && props.i % 2 === 0) || (!props.active && !props.answered && props.index === 1 && props.i % 2 === 1)
-    ? '100vh'
-      : (!props.active && !props.answered && props.index === 1 && props.i % 2 === 0) || (!props.active && !props.answered && props.index === 0 && props.i % 2 === 1)
-      ? '-100vh'
-        : 0};
-  left: 0;
   height: 100vh;
   width: 50vw;
   background-image: ${props => `url(${props.imageUrl})`};
@@ -29,34 +69,45 @@ const StyledBox = styled.button`
   background-size: cover;
   border: none;
   filter: grayscale(80%);
-  transition: 0.25s ease-in-out filter, 0.7s ease-in-out top, 0.7s ease-in-out left;
+  transition: filter 0.25s ease-in-out, transform 0.5s ease-in-out;
   outline: none;
+
   &:hover {
-    transition: 0.25s ease-in-out filter, 0.7s ease-in-out top, 0.7s ease-in-out left;
     filter: grayscale(0%);
   };
-  @media only screen
-    and (min-width: 280px)
-    and (max-width: 560px) {
-      top: 0;
-      left: ${props => (!props.active && !props.answered && props.index === 0 && props.i % 2 === 0) || (!props.active && !props.answered && props.index === 1 && props.i % 2 === 1)
-        ? '100vw'
-          : (!props.active && !props.answered && props.index === 1 && props.i % 2 === 0) || (!props.active && !props.answered && props.index === 0 && props.i % 2 === 1)
-          ? '-100vw'
-            : 0};
-    };
-  @media only screen
-    and (min-width: 280px)
-    and (max-width: 560px) {
-      height: 50vh;
-      width: 100vw;
-    };
-  @media only screen
-    and (min-device-width: 280px)
-    and (max-device-width: 830px)
-    and (-webkit-min-device-pixel-ratio: 2) {
-      filter: grayscale(${props => props.active ? '0%' : '100%'});
-    };
+
+  @media only screen and (min-width: 280px) and (max-width: 560px) {
+    height: 50vh;
+    width: 100vw;
+
+    /* Transform logic for mobile */
+    transform: ${props => {
+      if (!props.active && !props.answered) {
+        if ((props.index === 0 && props.i % 2 === 0) || (props.index === 1 && props.i % 2 === 1)) {
+          return 'translateX(100vw)';
+        } else if ((props.index === 1 && props.i % 2 === 0) || (props.index === 0 && props.i % 2 === 1)) {
+          return 'translateX(-100vw)';
+        }
+      }
+      return 'translateX(0)';
+    }};
+  };
+
+  @media only screen and (min-device-width: 280px) and (max-device-width: 830px) and (-webkit-min-device-pixel-ratio: 2) {
+    filter: grayscale(${props => props.active ? '0%' : '100%'});
+  };
+
+  /* Transform logic for desktop */
+  transform: ${props => {
+    if (!props.active && !props.answered) {
+      if ((props.index === 0 && props.i % 2 === 0) || (props.index === 1 && props.i % 2 === 1)) {
+        return 'translateY(100vh)';
+      } else if ((props.index === 1 && props.i % 2 === 0) || (props.index === 0 && props.i % 2 === 1)) {
+        return 'translateY(-100vh)';
+      }
+    }
+    return 'translateY(0)';
+  }};
 `
 
 const AnswerBox = styled(Box)`

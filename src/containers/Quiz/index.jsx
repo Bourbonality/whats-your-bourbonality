@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Flex } from 'pcln-design-system';
 import ResultPage from 'containers/ResultPage';
 import { Slide, LoadingPage, ProgressBar } from 'components';
@@ -11,6 +11,15 @@ const Quiz = () => {
   const [count, setCount] = useState(0);
   const [bourbonality, setBourbonality] = useState(null);
   const [showResult, setShowResult] = useState(false);
+  const [loadResult, setLoadResult] = useState(false);
+
+  useEffect(() => {
+    if (!showResult) document.body.style.overflow = 'hidden';
+  
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showResult]);
 
   const showResults = () => {
     setShowResult(!showResult);
@@ -45,8 +54,9 @@ const Quiz = () => {
         showLoading={!!bourbonality}
         showResult={showResult}
         setShowResult={setShowResult}
+        setLoadResult={setLoadResult}
       />
-      {bourbonality && showResult && (
+      {bourbonality && loadResult && (
         <ResultPage bourbonality={bourbonality} />
       )}
       <ProgressBar count={count} slides={slideData} />

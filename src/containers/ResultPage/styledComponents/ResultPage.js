@@ -41,7 +41,7 @@ export const FooterSection = styled(Flex)`
 
 export const DescriptionFlex = styled(Flex)`
 	position: relative;
-	margin-top: -60px;
+	margin-top: -40px;
 	height: calc(100vh / 3);
 `;
 
