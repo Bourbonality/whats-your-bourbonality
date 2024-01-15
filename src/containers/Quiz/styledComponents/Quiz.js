@@ -1,4 +1,9 @@
 import styled from 'styled-components'
+import { Flex } from 'pcln-design-system';
+
+const StyledFlex = styled(Flex)`
+  height: 100%;
+`
 
 const ShowResultsButton = styled.button`
   position: fixed;
@@ -26,5 +31,6 @@ const NextButton = styled.button`
 
 export {
   ShowResultsButton,
+  StyledFlex,
   NextButton
 }

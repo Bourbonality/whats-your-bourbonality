@@ -9,7 +9,7 @@ export const Background = styled(Flex)`
 
 export const StyledFlex = styled(Flex)`
 	position: absolute;
-	max-width: 1080px;
+	max-width: 100vw;
 	z-index: 150;
 	background-color: ${(props) => props.backgroundColor};
 `;
@@ -49,5 +49,6 @@ export const TitleText = styled(Text)`
 	font-family: 'Orelega One', cursive;
 	color: ${(props) => props.color};
 	font-weight: bold;
+	padding: 20px;
 	text-align: center;
 `;

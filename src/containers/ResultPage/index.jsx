@@ -14,7 +14,7 @@ const ResultPage = (props) => {
 
   return (
     <>
-      <Background justifyContent='center' backgroundColor={description.backgroundColor} height='100vh' width='100vw'/>
+      <Background justifyContent='center' backgroundColor={description.backgroundColor} height='100%' width='100vw'/>
       <StyledFlex flexDirection="column" alignItems='center' backgroundColor={description.backgroundColor}>
         <StyledImage src={image} />
         <Description {...props.bourbonality} />

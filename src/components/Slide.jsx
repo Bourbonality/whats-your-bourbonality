@@ -3,7 +3,6 @@ import { Flex } from 'pcln-design-system'
 import { results } from 'mocks'
 import { useScores } from 'hooks/useScores'
 import { S3_URL } from 'services/constants'
-import { isMobile } from 'utils'
 import { StyledSlide, StyledBox, AnswerBox } from 'components/styledComponents/Slide'
 
 const Slide = ({
@@ -20,7 +19,7 @@ const Slide = ({
     const newSlideData = []
     slide.map(async (slideData) => {
         newSlideData.push({
-          imageUrl: isMobile ? `${S3_URL}/answers/${slideData.name}.jpg` : `${S3_URL}/answers/${slideData.name}.jpg`,
+          imageUrl: `${S3_URL}/answers/${slideData.name}.jpg`,
           trait: slideData.trait,
           title: slideData.title,
         })
