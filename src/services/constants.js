@@ -1,6 +1,5 @@
 const S3_URL =
-	'https://whats-your-bourbonality-assets210734-staging.s3.us-east-2.amazonaws.com/public';
-// const bourbonalityUrl = 'https://main.d2r2c1vurg4eb8.amplifyapp.com/';
+	'https://dtd8v3gcyk3cf.cloudfront.net/public';
 const bourbonalityUrl = 'https://bourbonality.com/quiz';
 
 const RecoilKeys = {
