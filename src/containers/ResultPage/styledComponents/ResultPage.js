@@ -9,7 +9,7 @@ export const Background = styled(Flex)`
 
 export const StyledFlex = styled(Flex)`
 	position: absolute;
-	max-width: 100vw;
+	width: 100vw;
 	z-index: 150;
 	background-color: ${(props) => props.backgroundColor};
 `;

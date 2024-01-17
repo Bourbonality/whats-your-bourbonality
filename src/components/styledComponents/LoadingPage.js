@@ -18,7 +18,6 @@ const LoadingContainer = styled(Flex)`
   z-index: 180;
   width: 100vw;
   height: 100vh; 
-  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   background-color: #000;
 
