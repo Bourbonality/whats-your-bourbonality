@@ -17,7 +17,7 @@ const LoadingContainer = styled(Flex)`
   transition: transform 0.8s ease-in-out;
   z-index: 180;
   width: 100vw;
-  height: 100vh; 
+  height: 100%; 
   overflow: hidden;
   background-color: #000;
 

@@ -3,7 +3,7 @@ import { Flex } from 'pcln-design-system'
 
 const StyledFooter = styled(Flex)`
 position: fixed;
-top: ${props => `calc(100vh - ${props.show ? '100px' : `${props.showButton}px`})`};
+top: ${props => `calc(100% - ${props.show ? '100px' : `${props.showButton}px`})`};
 background-color: ${props => props.color};
 transition: 0.2s ease-in-out top;
 border-radius: 10px 10px 0px 0px;

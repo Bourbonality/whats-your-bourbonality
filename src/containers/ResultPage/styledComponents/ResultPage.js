@@ -21,7 +21,7 @@ export const TitleImage = styled(Image)`
 export const StyledImage = styled(Image)`
 	max-width: 100%;
 	width: 100vw;
-	max-height: 100vh;
+	max-height: 100%;
 	box-shadow: 0 0 50px 50px white inset;
 `;
 
@@ -42,7 +42,7 @@ export const FooterSection = styled(Flex)`
 export const DescriptionFlex = styled(Flex)`
 	position: relative;
 	margin-top: -40px;
-	height: calc(100vh / 3);
+	height: calc(100% / 3);
 `;
 
 export const TitleText = styled(Text)`

@@ -14,15 +14,17 @@ import styled from 'styled-components'
 
 const LandingContainer = styled(Flex)`
   position: absolute;
+  height: 100vh;
   transition: transform 0.8s ease-in-out;
+  top: 50%;
+  left: 50%;
   z-index: 150;
   width: 100vw;
-  height: 100vh;
   overflow: hidden;
   background-color: #1b191b;
 
   /* Transform logic */
-  transform: ${props => props.started ? 'translateY(-120vh)' : 'translateY(0vh)'};
+  transform: ${props => props.started ? 'translate(-50%, -180%)' : 'translate(-50%, -50%)'};
 `;
 
 

@@ -18,6 +18,7 @@ import styled from 'styled-components';
 
 export const Glow = styled.div`
   margin: 30px 20px 80px;
+  flex-wrap: wrap;
   padding: 30px;
   border-radius: 20px;
   transition: 0.4s linear box-shadow, 0.6s linear border;

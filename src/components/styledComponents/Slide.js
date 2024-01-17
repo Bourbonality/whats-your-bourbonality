@@ -5,6 +5,7 @@ const StyledSlide = styled(Flex)`
   position: absolute;
   overflow: hidden;
   flex-direction: row;
+  height: 100%;
   z-index: ${props => props.active && !props.answered ? 100 : props.i};
   @media only screen
     and (min-width: 280px)
@@ -77,7 +78,7 @@ const StyledBox = styled.button`
   };
 
   @media only screen and (min-width: 280px) and (max-width: 560px) {
-    height: 50vh;
+    height: 50%;
     width: 100vw;
 
     /* Transform logic for mobile */
@@ -101,9 +102,9 @@ const StyledBox = styled.button`
   transform: ${props => {
     if (!props.active && !props.answered) {
       if ((props.index === 0 && props.i % 2 === 0) || (props.index === 1 && props.i % 2 === 1)) {
-        return 'translateY(100vh)';
+        return 'translateY(100%)';
       } else if ((props.index === 1 && props.i % 2 === 0) || (props.index === 0 && props.i % 2 === 1)) {
-        return 'translateY(-100vh)';
+        return 'translateY(-100%)';
       }
     }
     return 'translateY(0)';
